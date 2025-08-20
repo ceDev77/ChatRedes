@@ -56,6 +56,7 @@ class chat_servidor:
                     if apelido in self.clientes:
                         self.clientes[apelido].desconectar()
                         del self.clientes[apelido]
+
                 self.broadcast(f"SERVIDOR: {apelido} saiu do chat!")
                 lista_msg = json.dumps({
                     "command": "UPDATE_LIST",
@@ -96,10 +97,24 @@ class chat_servidor:
                 _, destino, mensagem = comando.split(" ", 2)
                 with self.lock:
                     if destino in self.clientes:
+                        # Enviar mensagem do remetente para o destinatário
                         self.clientes[destino].enviar(f"{apelido}: {mensagem}")
+                        # Confirmar envio para o remetente
+                        socket_cliente.sendall("MSG_OK\n".encode('utf-8'))
                     else:
                         socket_cliente.sendall("ERRO: Destino não encontrado\n".encode('utf-8'))
             except Exception as e:
                 socket_cliente.sendall(f"ERRO: {e}\n".encode('utf-8'))
+
+
+
+        elif comando.startswith("UPDATE_LIST"):
+            # Enviar lista atualizada de clientes
+            with self.lock:
+                lista_msg = json.dumps({
+                    "command": "UPDATE_LIST",
+                    "client_list": list(self.clientes.keys())
+                }) + "\n"
+                socket_cliente.sendall(lista_msg.encode('utf-8'))
 
         return apelido
