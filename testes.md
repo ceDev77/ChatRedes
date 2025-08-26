@@ -2,7 +2,7 @@
 
 ## 1. INTRODUÇÃO
 
-Este documento descreve os testes realizados no sistema de chat desenvolvido, incluindo os resultados obtidos e análise dos mesmos. O sistema foi testado utilizando múltiplos clientes conectados simultaneamente ao servidor, com monitoramento de tráfego através do Wireshark.
+Este documento descreve os testes realizados no sistema de chat desenvolvido, incluindo os resultados obtidos e análise dos mesmos. O sistema foi testado utilizando múltiplos clientes conectados simultaneamente ao servidor.
 
 ## 2. AMBIENTE DE TESTE
 
