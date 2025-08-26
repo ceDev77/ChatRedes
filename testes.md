@@ -93,3 +93,14 @@ Este documento descreve os testes realizados no sistema de chat desenvolvido, in
 **Evidência**: ![Saída de Usuário](imagens/saida_usuario.png)
 
 ---
+
+## 4. ANÁLISE DO TRÁFEGO DE REDE (WIRESHARK)
+
+### 4.1 Captura do Protocolo de Comunicação
+
+**Objetivo**: Monitorar e analisar o tráfego de rede entre cliente e servidor durante as operações de chat.
+
+**Evidência**: ![Wireshark - Protocolo](imagens/wireshark.png)
+**Evidência**: ![Wireshark - Detalhes](imagens/wireshark2.png)
+
+---
