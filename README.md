@@ -8,6 +8,10 @@ Sistema de chat em tempo real desenvolvido em Python com interface gráfica Tkin
 ```bash
 python3 main.py
 ```
+ou, caso esteja usando um .venv:
+```bash
+python main.py
+```
 **Aguarde a mensagem:** `Servidor iniciado em 0.0.0.0:2004. Aguardando conexões...`
 
 ### 2. Abra o Primeiro Cliente
